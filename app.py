@@ -22,13 +22,7 @@ def predict():
     df = pd.DataFrame(features_value, columns=features_name)
     output = model.predict(df)
         
-    if output >= 50:
-        res_val = "** Fail **"
-    else:
-        res_val = "Pass"
-        
-
-    return render_template('index.html', prediction_text='You are {}'.format(res_val))
+    return render_template('index.html', prediction_text='Your predicted Mark is  {}'.format(output))
 
 if __name__ == "__main__":
     app.run()
